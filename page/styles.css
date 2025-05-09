@@ -1,0 +1,259 @@
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Bouton burger (caché desktop) */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all .3s ease;
+}
+
+/* Navigation */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Bannière principale */
+.banner {
+    background: url('https://cdn.pixabay.com/photo/2022/02/15/10/39/robot-7014652_1280.jpg') center/cover no-repeat;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.banner h1 {
+    font-size: 3em;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.banner p {
+    font-size: 1.2em;
+    max-width: 600px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+/* Section A Propos */
+#apropos {
+    padding: 40px 20px;
+}
+
+#apropos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.about-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.about-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.about-item p {
+    font-size: .95em;
+}
+
+/* Galerie */
+#gallery {
+    padding: 40px 20px;
+}
+
+#gallery h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Newsletter */
+#newsletter {
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+#newsletter h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#newsletter form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#newsletter form div {
+    margin-bottom: 15px;
+}
+
+#newsletter label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#newsletter input,
+#newsletter textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#newsletter button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#newsletter button:hover {
+    background: #555;
+}
+
+/* Pied de page */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: .9em;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:480px) {
+
+    /* Affiche le burger */
+    .burger {
+        display: flex;
+    }
+
+    /* Cache la nav par défaut */
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #eee;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner h1 {
+        font-size: 2.2em;
+    }
+}
